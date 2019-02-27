@@ -6,4 +6,6 @@ coverage
 .env
 npm-debug.log
 .jshintrc
+**/.DS_Store
 .DS_Store
+helm/k8s-watson-assistant-simple/testvalues.yaml

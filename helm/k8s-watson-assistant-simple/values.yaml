@@ -1,0 +1,13 @@
+
+replicas: 1
+
+service:
+  type: NodePort
+  internalPort: 3000
+  nodePort: 30074
+  image: 
+
+watsonSkill:
+  assistantIamApiKey:
+  assistantId:
+  assistantUrl: "https://gateway.watsonplatform.net/assistant/api"

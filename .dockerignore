@@ -1,0 +1,13 @@
+.gitignore
+.git
+.DS_Store
+**/.DS_Store
+Dockerfile
+readme_images
+.env*
+.gitattributes
+README.md
+.cfignore
+CONTRIBUTING.md
+LICENSE
+training

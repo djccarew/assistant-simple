@@ -25,4 +25,7 @@ var port = process.env.PORT || 3000;
 server.listen(port, function() {
   // eslint-disable-next-line
   console.log('Server running on port: %d', port);
+  console.log('ASSISTANT_ID is ' + process.env.ASSISTANT_ID);
+  console.log('ASSISTANT_IAM_APIKEY is ' + process.env.ASSISTANT_IAM_APIKEY);
+  console.log('ASSISTANT_URL is ' + process.env.ASSISTANT_URL);
 });

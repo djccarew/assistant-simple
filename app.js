@@ -80,6 +80,7 @@ app.post('/api/message', function (req, res) {
   // Send the input to the assistant service
   assistant.message(payload, function (err, data) {
     if (err) {
+      console.error(err);
       return res.status(err.code || 500).json(err);
     }
 
@@ -88,12 +89,16 @@ app.post('/api/message', function (req, res) {
 });
 
 app.get('/api/session', function (req, res) {
+  console.log("Creating session ...");
   assistant.createSession({
     assistant_id: process.env.ASSISTANT_ID || '{assistant_id}',
   }, function (error, response) {
     if (error) {
+      console.error(error);
       return res.send(error);
     } else {
+      console.log("Session created");
+      console.log(JSON.stringify(response));
       return res.send(response);
     }
   });

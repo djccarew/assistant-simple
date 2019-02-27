@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-{{ .Chart.Name }}
+  labels:
+    app: k8s-watson-assistant-simple
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name | quote }}
+
+
+
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+     - port: {{ .Values.service.internalPort }}
+{{ if (.Values.service.type) and eq .Values.service.type "NodePort" and (.Values.service.nodePort) }}
+       nodePort:  {{ .Values.service.nodePort }}
+{{ end }}
+  selector:
+    app: k8s-watson-assistant-simple
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name | quote }}
